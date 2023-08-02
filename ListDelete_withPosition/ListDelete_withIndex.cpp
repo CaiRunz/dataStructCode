@@ -83,14 +83,26 @@ void Delete(int index)
 {
     // the index is 0 to (lenth of list)-1
     struct Node* temp_del = head;
+    //不设头指针碰到对第一个节点处理就需要单独写一段函数
+
+    if (index==0)
+    {   
+        Node* temp=head;
+        head=head->next;
+        delete(temp);
+        return;//如果没有return会报错,程序会接着向下执行
+    }
+    
+
     for (int i = 0; i < index - 1; i++)
     {
-
+        printf(" the i in for() is %d\n",i);//当输入i=1时不会打印本句话,表示
+                                            //没有进循环
         temp_del = temp_del->next;
     }
 
 
-
+    //temp_del points to (index-1) node 
     struct Node* temp_rep = temp_del->next;
 
     printf("now the temp_del pointer :%d\n", temp_del);
