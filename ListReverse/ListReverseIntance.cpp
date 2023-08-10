@@ -55,9 +55,6 @@ void Print(Node *head)
 
 }
 
-
-
-
 Node *ListReverse(struct Node *head)
 {
     struct Node *current , *prev, *next;//定义多个指针必须每个前都需要*
